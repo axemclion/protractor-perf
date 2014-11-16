@@ -1,6 +1,6 @@
 {
   "name": "protractor-perf",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Reusing Angular e2e tests for performance analysis",
   "main": "lib/index.js",
   "dependencies": {
@@ -18,5 +18,20 @@
     "browser-perf"
   ],
   "author": "Parashuram <code@nparashuram.com>",
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axemclion/protractor-perf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/axemclion/protractor-perf/issues"
+  },
+  "homepage": "https://github.com/axemclion/protractor-perf"
 }
