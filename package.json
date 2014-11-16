@@ -1,0 +1,22 @@
+{
+  "name": "protractor-perf",
+  "version": "0.0.1",
+  "description": "Reusing Angular e2e tests for performance analysis",
+  "main": "lib/index.js",
+  "dependencies": {
+    "browser-perf": "~1.1.1",
+    "optimist": "^0.6.1",
+    "protractor": "~1.4.0"
+  },
+  "keywords": [
+    "perf",
+    "web",
+    "webperformance",
+    "performance",
+    "angular",
+    "protractor",
+    "browser-perf"
+  ],
+  "author": "Parashuram <code@nparashuram.com>",
+  "license": "Apache 2.0"
+}
