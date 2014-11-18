@@ -1,8 +1,11 @@
 {
   "name": "protractor-perf",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Reusing Angular e2e tests for performance analysis",
   "main": "lib/index.js",
+  "bin": {
+    "protractor-perf": "lib/cli.js"
+  },
   "dependencies": {
     "browser-perf": "~1.1.1",
     "optimist": "^0.6.1",
@@ -24,7 +27,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/protractor test/conf.js && node lib/cli.js test/conf.js"
   },
   "repository": {
     "type": "git",
