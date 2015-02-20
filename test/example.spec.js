@@ -1,10 +1,9 @@
 var PerfRunner = require('..');
 describe('angularjs homepage todo list', function() {
-	var perfRunner = new PerfRunner(protractor);
+	var perfRunner = new PerfRunner(protractor, browser);
 
 	it('should add a todo', function() {
 		browser.get('http://www.angularjs.org');
-
 		perfRunner.start();
 
 		element(by.model('todoText')).sendKeys('write a protractor test');

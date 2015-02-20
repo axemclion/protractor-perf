@@ -19,7 +19,7 @@ The test case need to specify when to start and stop measuring performance metri
 ```javascript
 var ProtractorPerf = require('protractor-perf');
 describe('angularjs homepage todo list', function() {
-    var perf = new ProtractorPerf(protractor); // Initialize the perf runner
+    var perf = new ProtractorPerf(protractor, browser); // Initialize the perf runner
     it('should add a todo', function() {
         browser.get('http://www.angularjs.org');
 
@@ -41,7 +41,7 @@ describe('angularjs homepage todo list', function() {
 
 The four statements to note are 
 
-1. Initialize the Perf monitor using `new ProtractorPerf(protractor)`
+1. Initialize the Perf monitor using `new ProtractorPerf(protractor, browser)`
 2. To start measuring the perf, use `perf.start()`
 3. Once the scenario that you would like to perf test completes, use `perf.stop()`
 4. Finally, use `perf.getStats('statName')` in `expect` statements to ensure that all the performance metrics are within the acceptable range.
