@@ -10,6 +10,10 @@ Protractor test cases are re-used to run scenarios where performance needs to be
 
 Protractor is usually invoked using `$ protractor conf.js`. Use `$ protractor-perf conf.js` instead to start measuring performance. 
 
+The config file is the same configuration file used for protractor tests. 
+
+_Note_: If you run selenium using protractor's `webdriver-manager`, you would need to specify `seleniumPort` and `selenium` keys in the config file, to explicitly specify the port on which the selenium server will run. This port will also be picked up by `protractor-perf`. See `./test/conf.js` as an example.  
+
 > When the instrumented test cases are run using protractor, the code related to performance is a no-op. This way, adding instrumentation does not break your ability to run protractor to just test for functionality.  
 
 ## Instrumenting the test cases
