@@ -21,25 +21,28 @@ _Note_: If you run selenium using protractor's `webdriver-manager`, you would ne
 The test case need to specify when to start and stop measuring performance metrics for a certain scenario. The following code is an example of a test case, with perf code snippets added. 
 
 ```javascript
-var ProtractorPerf = require('protractor-perf');
+var PerfRunner = require('..');
 describe('angularjs homepage todo list', function() {
-    var perf = new ProtractorPerf(protractor, browser); // Initialize the perf runner
-    it('should add a todo', function() {
-        browser.get('http://www.angularjs.org');
+	var perfRunner = new PerfRunner(protractor, browser);
 
-        perf.start(); // Start measuring the metrics
-        element(by.model('todoText')).sendKeys('write a protractor test');
-        element(by.css('[value="add"]')).click();
-        perf.stop(); // Stop measuring the metrics 
+	it('should add a todo', function() {
+		browser.get('http://www.angularjs.org');
+		perfRunner.start();
 
-        if (perf.isEnabled) { // Is perf measuring enabled ?
-            // Check for perf regressions, just like you check for functional regressions
-            expect(perf.getStats('meanFrameTime')).toBeLessThan(60); 
-        };
+		element(by.model('todoList.todoText')).sendKeys('write a protractor test');
+		element(by.css('[value="add"]')).click();
 
-        var todoList = element.all(by.repeater('todo in todos'));
-        expect(todoList.count()).toEqual(3);
-    });
+		perfRunner.stop();
+
+		if (perfRunner.isEnabled) {
+			expect(perfRunner.getStats('meanFrameTime')).toBeLessThan(60);
+		};
+
+		var todoList = element.all(by.repeater('todo in todoList.todos'));
+		expect(todoList.count()).toEqual(3);
+		expect(todoList.get(2).getText()).toEqual('write a protractor test');
+
+	});
 });
 ```
 
