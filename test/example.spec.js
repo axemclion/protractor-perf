@@ -12,12 +12,12 @@ describe('angularjs homepage todo list', function() {
 		perfRunner.stop();
 
 		if (perfRunner.isEnabled) {
+			perfRunner.printStats();
 			expect(perfRunner.getStats('meanFrameTime')).toBeLessThan(60);
 		};
 
 		var todoList = element.all(by.repeater('todo in todoList.todos'));
 		expect(todoList.count()).toEqual(3);
 		expect(todoList.get(2).getText()).toEqual('write a protractor test');
-
 	});
 });
