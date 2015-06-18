@@ -59,3 +59,15 @@ The `perf.isEnabled` is needed to ensure that perf metrics are not tested when t
 ### Metrics measured   
 
 `protractor-perf` is based on [browser-perf](http://github.com/axemclion/browser-perf). `browser-perf` measures the metrics that can be tested for regressions. Look at [browser-perf's wiki page](https://github.com/axemclion/browser-perf/wiki) for more information about the project. 
+
+### Grunt Integration
+Invoke `protractor-perf` from a GruntFile as below
+```javascript
+module.exports = function(grunt) {
+  var protractorperf = require('protractor-perf');
+  grunt.registerTask('protractorperf', function() {
+      protractorperf.run('./merci-perf-conf.js'); // config file
+  });
+  grunt.registerTask('run', ['protractorperf']);
+};
+```
