@@ -21,7 +21,7 @@
     "browser-perf"
   ],
   "author": "Parashuram <code@nparashuram.com>",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "directories": {
     "test": "test"
   },
